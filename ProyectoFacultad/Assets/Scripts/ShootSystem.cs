@@ -12,10 +12,10 @@ public class ShootSystem : MonoBehaviour
         transform.position += -transform.right * speed * Time.deltaTime;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
 
-        if (collision.gameObject.TryGetComponent<EnemiesControllers>(out EnemiesControllers enemyComponent))
+        if (other.gameObject.TryGetComponent<EnemiesControllers>(out EnemiesControllers enemyComponent))
         {
             enemyComponent.TakeDamage(1);
         }

@@ -7,6 +7,8 @@ public class EnemiesControllers : MonoBehaviour
     public float health;
     public float maxHealth = 4;
 
+    public float attackDamage = 1f;
+
     private void Start()
     {
         health = maxHealth;

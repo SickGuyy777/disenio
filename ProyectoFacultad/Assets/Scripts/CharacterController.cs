@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CharacterController : MonoBehaviour
     Rigidbody _rigidbody;
     public bool playerIsOnTheGround = true;
 
+    [Space]
     public GameObject ProjectilePrefab;
     public Transform LaunchOffset;
 
