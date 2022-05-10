@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
     public float jumpForce;
     Rigidbody _rigidbody;
     public bool playerIsOnTheGround = true;
+    public Animator an;
 
     [Space]
     public GameObject ProjectilePrefab;
@@ -24,6 +25,8 @@ public class CharacterController : MonoBehaviour
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * movementSpeed * Time.deltaTime;
 
+        an.SetFloat("Horizontal",Mathf.Abs( movement));
+
         if (!Mathf.Approximately(0, movement))
             transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
 
@@ -31,6 +34,7 @@ public class CharacterController : MonoBehaviour
         {
             _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             playerIsOnTheGround = false;
+            an.SetBool("ensuelo", false);
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -44,6 +48,7 @@ public class CharacterController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             playerIsOnTheGround = true;
+            an.SetBool("ensuelo", true);
         }
     }
 }
