@@ -12,6 +12,12 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            timer = 5;
+        }
+
         timer -= Time.deltaTime;
 
         textTimer.text = "" + timer.ToString("f0");

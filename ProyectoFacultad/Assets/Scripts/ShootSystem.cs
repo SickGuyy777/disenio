@@ -20,7 +20,7 @@ public class ShootSystem : MonoBehaviour
             enemyComponent.TakeDamage(1);
         }
 
-        Destroy(gameObject);
+        Destroy(this.gameObject);
 
     }
 }

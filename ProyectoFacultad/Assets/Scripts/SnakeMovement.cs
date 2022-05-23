@@ -14,4 +14,6 @@ public class SnakeMovement : MonoBehaviour
         transform.position += new Vector3(h, 0, 0) * movementSpeed * Time.deltaTime;
         transform.position += new Vector3(0, v, 0) * movementSpeed * Time.deltaTime;
     }
+
+    
 }

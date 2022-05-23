@@ -21,7 +21,7 @@ public class HealthSystem : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("DeadScene");
+            SceneManager.LoadScene("MiniGame01");
         }
 
     }
