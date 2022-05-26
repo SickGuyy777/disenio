@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
+   
+    public AudioSource sonidodañopj;
+    public AudioSource muerte;
     public int baseHealth;
     public int currentHealth;
     public HealthBar healthBar;
@@ -18,10 +21,11 @@ public class HealthSystem : MonoBehaviour
     {
         currentHealth -= amount;
         healthBar.SetHealth(currentHealth);
-
+        GameObject.Instantiate(sonidodañopj);
         if (currentHealth <= 0)
         {
             SceneManager.LoadScene("MiniGame01");
+            GameObject.Instantiate(muerte);
         }
 
     }

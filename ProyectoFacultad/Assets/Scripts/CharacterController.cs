@@ -10,6 +10,7 @@ public class CharacterController : MonoBehaviour
     Rigidbody _rigidbody;
     public bool playerIsOnTheGround = true;
     public Animator an;
+    public AudioSource sonidodisparo;
 
     [Space]
     public GameObject ProjectilePrefab;
@@ -40,6 +41,7 @@ public class CharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            GameObject.Instantiate(sonidodisparo);
         }
     }
 
