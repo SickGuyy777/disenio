@@ -11,10 +11,5 @@ public class ColliderSystemSnake : MonoBehaviour
         {
             SceneManager.LoadScene("Level1");
         }
-        else if (CompareTag("DeathCollider"))
-        {
-
-            SceneManager.LoadScene("Level1");
-        }
     }
 }

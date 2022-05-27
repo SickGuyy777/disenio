@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - DeathCollider
   - Meta
+  - Snake
   layers:
   - Default
   - TransparentFX
