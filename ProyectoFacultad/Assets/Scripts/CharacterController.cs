@@ -16,9 +16,19 @@ public class CharacterController : MonoBehaviour
     public GameObject ProjectilePrefab;
     public Transform LaunchOffset;
 
+    //float posX;
+    //float posY;
+    //float posZ;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+
+        //posX = PlayerPrefs.GetFloat("posicionXguardado");
+        //posY = PlayerPrefs.GetFloat("posicionYguardado");
+        //posZ = PlayerPrefs.GetFloat("posicionZguardado");
+
+        //transform.position = new Vector3(posX, posY, posZ);
     }
 
     void Update()
@@ -52,5 +62,12 @@ public class CharacterController : MonoBehaviour
             playerIsOnTheGround = true;
             an.SetBool("ensuelo", true);
         }
+    }
+    
+    public void guardarPosicionPlayer()
+    {
+        //PlayerPrefs.SetFloat("posicionXguardado", this.transform.position.x);
+        //PlayerPrefs.SetFloat("posicionYguardado", this.transform.position.y);
+        //PlayerPrefs.SetFloat("posicionZguardado", this.transform.position.z);
     }
 }
