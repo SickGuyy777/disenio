@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
 
-    public float timer = 0;
+    public float timerTime = 120;
     public Text textTimer;
 
     void Update()
@@ -15,16 +15,21 @@ public class Timer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            timer = 5;
+            timerTime = 5;
         }
 
-        timer -= Time.deltaTime;
+        timerTime -= Time.deltaTime;
 
-        textTimer.text = "" + timer.ToString("f0");
+        textTimer.text = "" + timerTime.ToString("f0");
 
-        if (timer <= 0)
+        //if (timer <= 0)
+        //{
+        //    SceneManager.LoadScene("MiniGame01");
+        //}
+
+        if (timerTime <= 0)
         {
-            SceneManager.LoadScene("MiniGame01");
+            timerTime = 0;
         }
     }
 }

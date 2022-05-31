@@ -8,6 +8,9 @@ TagManager:
   - DeathCollider
   - Meta
   - Snake
+  - Mala
+  - Bad Col
+  - Good Col
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - Enemy
   - BulletCollider
   - Bullet
-  - 
+  - Mala
   - 
   - 
   - 

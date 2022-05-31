@@ -4,12 +4,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ParedSanake : MonoBehaviour
-{  
-    private void OnCollisionEnter(Collision other)
+{
+    public GameObject minigameCanv;
+    public HealthSystem health;
+
+    private void Start()
+    {
+        health = FindObjectOfType<HealthSystem>();
+    }
+
+    private void OnCollisionEnter2D (Collision2D other)
     {
         if (other.collider.CompareTag("Snake"))
         {
-            SceneManager.LoadScene ("Level1");
+            minigameCanv.SetActive(false);
+
+            health.currentHealth = health.currentHealth / 2;
         }
     }
 }

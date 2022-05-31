@@ -17,16 +17,21 @@ public class HealthSystem : MonoBehaviour
         currentHealth = baseHealth;
     }
 
+    private void Update()
+    {
+        healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 1)
+        {
+            SceneManager.LoadScene("DeadScene");
+            GameObject.Instantiate(muerte);
+        }
+    }
+
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
         healthBar.SetHealth(currentHealth);
         GameObject.Instantiate(sonidodañopj);
-        if (currentHealth <= 0)
-        {
-            SceneManager.LoadScene("MiniGame01");
-            GameObject.Instantiate(muerte);
-        }
-
     }
 }
