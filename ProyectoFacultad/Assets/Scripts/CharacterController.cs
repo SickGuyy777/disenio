@@ -16,19 +16,19 @@ public class CharacterController : MonoBehaviour
     public GameObject ProjectilePrefab;
     public Transform LaunchOffset;
 
-    //float posX;
-    //float posY;
-    //float posZ;
+    float posX;
+    float posY;
+    float posZ;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
 
-        //posX = PlayerPrefs.GetFloat("posicionXguardado");
-        //posY = PlayerPrefs.GetFloat("posicionYguardado");
-        //posZ = PlayerPrefs.GetFloat("posicionZguardado");
+        posX = PlayerPrefs.GetFloat("posicionxguardado");
+        posY = PlayerPrefs.GetFloat("posicionyguardado");
+        posZ = PlayerPrefs.GetFloat("posicionzguardado");
 
-        //transform.position = new Vector3(posX, posY, posZ);
+        transform.position = new Vector3(posX, posY, posZ);
     }
 
     void Update()
@@ -66,8 +66,9 @@ public class CharacterController : MonoBehaviour
     
     public void guardarPosicionPlayer()
     {
-        //PlayerPrefs.SetFloat("posicionXguardado", this.transform.position.x);
-        //PlayerPrefs.SetFloat("posicionYguardado", this.transform.position.y);
-        //PlayerPrefs.SetFloat("posicionZguardado", this.transform.position.z);
+        PlayerPrefs.SetFloat("posicionxguardado", this.transform.position.x);
+        PlayerPrefs.SetFloat("posicionyguardado", this.transform.position.y);
+        PlayerPrefs.SetFloat("posicionzguardado", this.transform.position.z);
+        PlayerPrefs.Save();
     }
 }
