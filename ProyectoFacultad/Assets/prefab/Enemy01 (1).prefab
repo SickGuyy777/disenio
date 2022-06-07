@@ -237,11 +237,13 @@ MonoBehaviour:
   attackDamage: 1
   player: {fileID: 0}
   speed: 5
-  stoppingDistance: 10
-  retreatDistance: 8
+  stoppingDistance: 6
+  retreatDistance: 0
   startTimeBtwShots: 2
   projectile: {fileID: 8066307920490270495, guid: 24a58aa1635dddc4a88d6cbdfefd8364, type: 3}
   LaunchOffset: {fileID: 2046468828}
+  ammoBox: {fileID: 0}
+  transform: {fileID: 0}
 --- !u!114 &1595993619503322190
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ TagManager:
   - Mala
   - Bad Col
   - Good Col
+  - Trampolin
+  - Caida
   layers:
   - Default
   - TransparentFX

@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
+    public int fuerzadetrampolin;
     public float movementSpeed;
     public float jumpForce;
     Rigidbody _rigidbody;
     public bool playerIsOnTheGround = true;
     public Animator an;
     public AudioSource sonidodisparo;
+    public AudioSource sonidotrampolin;
     public Timer timer;
 
     [Space]
@@ -77,6 +79,12 @@ public class CharacterController : MonoBehaviour
             playerIsOnTheGround = true;
             an.SetBool("ensuelo", true);
         }
+
+        if (collision.gameObject.CompareTag("Trampolin"))
+        {
+            _rigidbody.velocity = Vector3.up * fuerzadetrampolin;
+           Instantiate(sonidotrampolin);
+        }
     }
 
     public void Reload()
@@ -95,4 +103,6 @@ public class CharacterController : MonoBehaviour
             currentAmmo = maxAmmoSize;
         }
     }
+
+    
 }
