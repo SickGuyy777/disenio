@@ -51,7 +51,7 @@ public class CharacterController : MonoBehaviour
                 an.SetBool("ensuelo", false);
             }
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && currentClip > 0)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && currentClip > 0 || Input.GetKeyDown(KeyCode.Mouse0) && currentAmmo > 0)
             {
                 Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
                 GameObject.Instantiate(sonidodisparo);

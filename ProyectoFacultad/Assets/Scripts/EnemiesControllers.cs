@@ -10,17 +10,24 @@ public class EnemiesControllers : MonoBehaviour
     public AudioSource sonidodaño;
     public float attackDamage = 1f;
 
+    [Space]
     public Transform player;
     private float _distToPlayer;
 
+    [Space]
     public float speed;
     public float stoppingDistance;
     public float retreatDistance;
 
+    [Space]
     private float timeBtwShots;
     public float startTimeBtwShots;
     public GameObject projectile;
     public Transform LaunchOffset;
+
+    [Space]
+    public GameObject ammoBox;
+    public Transform transform;
 
     private void Start()
     {
@@ -68,8 +75,6 @@ public class EnemiesControllers : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
-
-
     }
 
     public void TakeDamage(float damageAmount)
@@ -79,12 +84,20 @@ public class EnemiesControllers : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+                Destroy(gameObject);
+                DropAmmo();
         }
     }
 
     void Flip()
     {
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+    }
+
+    void DropAmmo()
+    {
+        Vector3 position = transform.position;
+        GameObject boxAmmo = Instantiate(ammoBox, position + new Vector3(0.1f,1f,0f), Quaternion.identity);
+        Destroy(boxAmmo, 5f);
     }
 }
