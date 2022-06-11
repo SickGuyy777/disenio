@@ -24,7 +24,10 @@ public class CharacterController : MonoBehaviour
     public GameObject minigame;
 
     [Space]
-    public int currentClip, maxClipSize = 20, currentAmmo, maxAmmoSize = 100;
+    public int currentClip;
+    public int maxClipSize = 20;
+    public int currentAmmo;
+    public int maxAmmoSize = 100;
 
     void Start()
     {
@@ -53,17 +56,14 @@ public class CharacterController : MonoBehaviour
                 an.SetBool("ensuelo", false);
             }
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && currentClip > 0 || Input.GetKeyDown(KeyCode.Mouse0) && currentAmmo > 0)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && currentClip > 0)
             {
                 Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
                 GameObject.Instantiate(sonidodisparo);
                 currentClip--;
             }
 
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Reload();
-            }
+            Reload();
         }
 
         else
@@ -89,10 +89,15 @@ public class CharacterController : MonoBehaviour
 
     public void Reload()
     {
-        int reloadAmount = maxClipSize - currentClip;
-        reloadAmount = (currentClip - reloadAmount) >= 0 ? reloadAmount : currentAmmo;
-        currentClip += reloadAmount;
-        currentAmmo -= reloadAmount;
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo > 0)
+        {
+            currentAmmo = currentAmmo - 20;
+            currentClip = currentClip + 20;
+            if (currentClip > 20)
+            {
+                currentClip = 20;
+            }
+        }
     }
 
     public void AddAmmo(int ammoAmount)
