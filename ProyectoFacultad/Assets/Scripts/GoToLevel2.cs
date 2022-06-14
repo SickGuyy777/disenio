@@ -7,6 +7,8 @@ public class GoToLevel2 : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
+        
+
         SceneManager.LoadScene("Level2");
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public AudioSource sonidodaño;
+    public AudioSource sonidodo;
     public int damage;
 
     public void OnTriggerEnter(Collider other)
@@ -13,7 +13,7 @@ public class EnemyAttack : MonoBehaviour
         if (hitHealth != null)
         {
             hitHealth.TakeDamage(damage);
-            GameObject.Instantiate(sonidodaño);
+            GameObject.Instantiate(sonidodo);
         }
     }
 }

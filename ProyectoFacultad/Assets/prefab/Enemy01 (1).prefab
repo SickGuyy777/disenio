@@ -233,7 +233,7 @@ MonoBehaviour:
   range: 20
   maxHealth: 4
   sonidodisparo: {fileID: 7520538541932029456, guid: 457607e334811664aba0ba0057f7d209, type: 3}
-  "sonidoda\xF1o": {fileID: 2090941036457714017, guid: 7b3f915405fcb30469cd13ac89fed91d, type: 3}
+  sonidodo: {fileID: 2090941036457714017, guid: 7b3f915405fcb30469cd13ac89fed91d, type: 3}
   attackDamage: 1
   player: {fileID: 0}
   speed: 5
@@ -242,8 +242,8 @@ MonoBehaviour:
   startTimeBtwShots: 2
   projectile: {fileID: 8066307920490270495, guid: 24a58aa1635dddc4a88d6cbdfefd8364, type: 3}
   LaunchOffset: {fileID: 2046468828}
-  ammoBox: {fileID: 0}
-  transform: {fileID: 0}
+  ammoBox: {fileID: 739550226575615762, guid: 0f6eea0c477023a48aa8f6c280f9a1d3, type: 3}
+  transform: {fileID: 1595993619503322191}
 --- !u!114 &1595993619503322190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589720782385e194c992b8bfcf23b248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "sonidoda\xF1o": {fileID: 7520538541932029456, guid: 457607e334811664aba0ba0057f7d209, type: 3}
+  sonidodo: {fileID: 7520538541932029456, guid: 457607e334811664aba0ba0057f7d209, type: 3}
   damage: 1
 --- !u!136 &3119674549264540613
 CapsuleCollider:

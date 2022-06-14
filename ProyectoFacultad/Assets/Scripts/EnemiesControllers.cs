@@ -7,7 +7,7 @@ public class EnemiesControllers : MonoBehaviour
     public float health, range;
     public float maxHealth = 4;
     public AudioSource sonidodisparo;
-    public AudioSource sonidodaño;
+    public AudioSource sonidodo;
     public float attackDamage = 1f;
 
     [Space]
@@ -80,7 +80,7 @@ public class EnemiesControllers : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
-        GameObject.Instantiate(sonidodaño);
+        GameObject.Instantiate(sonidodo);
 
         if (health <= 0)
         {
