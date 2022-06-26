@@ -56,7 +56,7 @@ public class CharacterController : MonoBehaviour
                 an.SetBool("ensuelo", false);
             }
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && currentClip > 0)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && currentClip > 0 && PauseMenu.GameIsPaused == false)
             {
                 Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
                 GameObject.Instantiate(sonidodisparo);
@@ -89,7 +89,7 @@ public class CharacterController : MonoBehaviour
 
     public void Reload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo > 0)
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo > 0 && currentClip < 20)
         {
             currentAmmo = currentAmmo - 20;
             currentClip = currentClip + 20;
