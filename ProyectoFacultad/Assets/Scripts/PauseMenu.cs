@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject volumeControllerUI;
 
     void Update()
     {
@@ -27,6 +28,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        volumeControllerUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }

@@ -29,6 +29,9 @@ public class EnemiesControllers : MonoBehaviour
     public GameObject ammoBox;
     public Transform transform;
 
+    [Space]
+    public Animator anim;
+
     private void Start()
     {
         health = maxHealth;
@@ -53,7 +56,7 @@ public class EnemiesControllers : MonoBehaviour
 
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance && Vector2.Distance(transform.position, player.position) <= range)
         {
-              transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
         else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
@@ -74,6 +77,15 @@ public class EnemiesControllers : MonoBehaviour
         else
         {
             timeBtwShots -= Time.deltaTime;
+        }
+
+        if (_distToPlayer <= range)
+        {
+            anim.SetBool("IsWalking", true);
+        }
+        else
+        {
+            anim.SetBool("IsWalking", false);
         }
     }
 
