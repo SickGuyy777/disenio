@@ -14,6 +14,8 @@ public class CharacterController : MonoBehaviour
     public Animator an;
     public AudioSource sonidodisparo;
     public AudioSource sonidotrampolin;
+
+    public AudioSource sonidorecarga;
     public Timer timer;
 
     [Space]
@@ -91,6 +93,7 @@ public class CharacterController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo > 0 && currentClip < 20)
         {
+            GameObject.Instantiate(sonidorecarga);
             currentAmmo = currentAmmo - 20;
             currentClip = currentClip + 20;
             if (currentClip > 20)
