@@ -706,6 +706,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 6913474387962354241, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: m_Name
       value: EnemyOne (1)
@@ -6733,6 +6737,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 3347804022439909282, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 8179753355125716421, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
       propertyPath: m_Name
       value: EnemyTwo (1)
@@ -9600,6 +9608,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 6913474387962354241, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: m_Name
       value: EnemyOne (5)
@@ -9973,6 +9985,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 6913474387962354241, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: m_Name
       value: EnemyOne (7)
@@ -13128,6 +13144,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 6913474387962354241, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: m_Name
       value: EnemyOne (2)
@@ -16339,6 +16359,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 6913474387962354241, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: m_Name
       value: EnemyOne (4)
@@ -19655,6 +19679,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 3347804022439909282, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 8179753355125716421, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
       propertyPath: m_Name
       value: EnemyTwo (5)
@@ -19883,6 +19911,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 3347804022439909282, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 8179753355125716421, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
       propertyPath: m_Name
       value: EnemyTwo
@@ -21871,6 +21903,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 3347804022439909282, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 8179753355125716421, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
       propertyPath: m_Name
       value: EnemyTwo (2)
@@ -22134,6 +22170,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 6913474387962354241, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: m_Name
       value: EnemyOne (6)
@@ -30687,6 +30727,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 3347804022439909282, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 8179753355125716421, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
       propertyPath: m_Name
       value: EnemyTwo (4)
@@ -30817,6 +30861,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 6913474387962354241, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: m_Name
       value: EnemyOne
@@ -45567,6 +45615,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 6913474387962354241, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: m_Name
       value: EnemyOne (3)
@@ -47645,6 +47697,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 3347804022439909282, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5008610582622740298, guid: 8d4e8a295181ac74fb1028b9c89a01d5, type: 3}
     - target: {fileID: 8179753355125716421, guid: ffb86c0cc6489354d8b0a02d8c39aa4b, type: 3}
       propertyPath: m_Name
       value: EnemyTwo (3)

@@ -32,6 +32,9 @@ public class EnemiesControllers : MonoBehaviour
     [Space]
     public Animator anim;
 
+    [Space]
+    public GameObject deathEffect;
+
     private void Start()
     {
         health = maxHealth;
@@ -74,15 +77,11 @@ public class EnemiesControllers : MonoBehaviour
             Instantiate(projectile, LaunchOffset.position, Quaternion.identity );
             timeBtwShots = startTimeBtwShots;
             GameObject.Instantiate(sonidodisparo);
-
         }
         else
         {
             timeBtwShots -= Time.deltaTime;
-        }
-        
-        
-        
+        }  
     }
 
     public void TakeDamage(float damageAmount)
@@ -92,8 +91,9 @@ public class EnemiesControllers : MonoBehaviour
 
         if (health <= 0)
         {
-                Destroy(gameObject);
-                DropAmmo();
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            DropAmmo();
         }
     }
 
