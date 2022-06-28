@@ -57,10 +57,12 @@ public class EnemiesControllers : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance && Vector2.Distance(transform.position, player.position) <= range)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            anim.SetBool("IsWalking", true);
         }
         else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
             transform.position = this.transform.position;
+             anim.SetBool("IsWalking", false);
         }
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
@@ -78,15 +80,9 @@ public class EnemiesControllers : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
-
-        if (_distToPlayer <= range)
-        {
-            anim.SetBool("IsWalking", true);
-        }
-        else
-        {
-            anim.SetBool("IsWalking", false);
-        }
+        
+        
+        
     }
 
     public void TakeDamage(float damageAmount)
