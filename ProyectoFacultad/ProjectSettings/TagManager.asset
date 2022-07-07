@@ -14,6 +14,7 @@ TagManager:
   - Trampolin
   - Caida
   - Bala
+  - Enemy
   layers:
   - Default
   - TransparentFX

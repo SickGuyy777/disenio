@@ -31,6 +31,11 @@ public class CharacterController : MonoBehaviour
     public int currentAmmo;
     public int maxAmmoSize = 100;
 
+    [Space]
+    public GameObject granadePrefab;
+    public float granadeForce;
+    public Transform distancePoint;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -72,6 +77,11 @@ public class CharacterController : MonoBehaviour
         {
             minigame.SetActive(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            TrowGranade();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -110,6 +120,14 @@ public class CharacterController : MonoBehaviour
         {
             currentAmmo = maxAmmoSize;
         }
+    }
+
+    void TrowGranade()
+    {
+        GameObject newGranade = Instantiate(granadePrefab, transform.position + transform.forward, Quaternion.identity);
+
+        Vector2 dir = (distancePoint.position - transform.position).normalized;
+        newGranade.GetComponent<Rigidbody>().AddForce(granadeForce * dir, ForceMode.Impulse);
     }
 
     
