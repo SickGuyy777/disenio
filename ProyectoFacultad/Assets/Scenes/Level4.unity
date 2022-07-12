@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.28371978, g: 0.36873662, b: 0.45983475, a: 1}
+  m_IndirectSpecularColor: {r: 0.2837192, g: 0.3687359, b: 0.45983434, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1146,6 +1146,7 @@ MonoBehaviour:
   currentAmmo: 100
   maxAmmoSize: 100
   granadePrefab: {fileID: 1627982431822521545, guid: 847bc99b3113dc44eac541d88b48aae2, type: 3}
+  currentGranadeCant: 0
 --- !u!114 &81638123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3805,6 +3806,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 6503572914125511355, guid: 11ff13ae07e06084c80552c8429d4d04, type: 3}
+      propertyPath: ammoBox
+      value: 
+      objectReference: {fileID: 8309451021855348569, guid: f15dcdd95ad10b34696e367e4909f3c3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11ff13ae07e06084c80552c8429d4d04, type: 3}
 --- !u!1001 &235904926
@@ -4235,6 +4240,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259596045}
   m_Mesh: {fileID: 3128205663801172299, guid: 6fb8fb2273fb62e4293df790dc5197d9, type: 3}
+--- !u!1 &276779513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276779514}
+  - component: {fileID: 276779516}
+  - component: {fileID: 276779515}
+  m_Layer: 5
+  m_Name: GranadeImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &276779514
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276779513}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 44.281597, y: 57.886257, z: 57.886257}
+  m_Children: []
+  m_Father: {fileID: 333572326}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -849, y: 308}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &276779515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276779513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0842307b4739da04aa9bdb7eee2d84f1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &276779516
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276779513}
+  m_CullTransparentMesh: 1
 --- !u!1001 &281241916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5008,6 +5088,8 @@ RectTransform:
   - {fileID: 1061565458}
   - {fileID: 351348190}
   - {fileID: 2015909357}
+  - {fileID: 677145240}
+  - {fileID: 276779514}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7054,6 +7136,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: ammoBox
+      value: 
+      objectReference: {fileID: 8309451021855348569, guid: f15dcdd95ad10b34696e367e4909f3c3, type: 3}
     - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: deathEffect
       value: 
@@ -9272,6 +9358,100 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664803861}
+  m_CullTransparentMesh: 1
+--- !u!1 &677145239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 677145240}
+  - component: {fileID: 677145243}
+  - component: {fileID: 677145242}
+  - component: {fileID: 677145241}
+  m_Layer: 5
+  m_Name: GranadeCount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &677145240
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677145239}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 333572326}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -769.7999, y: 297}
+  m_SizeDelta: {x: 334.1975, y: 78.705}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &677145241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677145239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4205384dc4b3f9942a8503ab5799f9c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  granadeE: {fileID: 0}
+  granadeText: {fileID: 677145242}
+--- !u!114 &677145242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677145239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 42
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 7
+    m_MaxSize: 116
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: AmmoCount
+--- !u!222 &677145243
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677145239}
   m_CullTransparentMesh: 1
 --- !u!1 &678021557
 GameObject:
@@ -12110,6 +12290,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: ammoBox
+      value: 
+      objectReference: {fileID: 8309451021855348569, guid: f15dcdd95ad10b34696e367e4909f3c3, type: 3}
     - target: {fileID: 6913474387962354241, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: m_Name
       value: EnemyOne (1)
@@ -26119,6 +26303,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 81638120}
+    - target: {fileID: 1744156710, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
+      propertyPath: ammoBox
+      value: 
+      objectReference: {fileID: 8309451021855348569, guid: f15dcdd95ad10b34696e367e4909f3c3, type: 3}
     - target: {fileID: 6913474387962354241, guid: b26fe4b893a40724e940d000057b3c7c, type: 3}
       propertyPath: m_Name
       value: EnemyOne (2)

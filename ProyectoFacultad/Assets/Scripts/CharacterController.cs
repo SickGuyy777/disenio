@@ -33,6 +33,7 @@ public class CharacterController : MonoBehaviour
 
     [Space]
     public GameObject granadePrefab;
+    public int currentGranadeCant;
     
 
     void Start()
@@ -77,9 +78,10 @@ public class CharacterController : MonoBehaviour
             minigame.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) && currentGranadeCant > 0)
         {
             TrowGranade();
+            currentGranadeCant -= 1;
         }
     }
 
@@ -95,6 +97,11 @@ public class CharacterController : MonoBehaviour
         {
             _rigidbody.velocity = Vector3.up * fuerzadetrampolin;
            Instantiate(sonidotrampolin);
+        }
+
+        if (collision.gameObject.CompareTag("Granade"))
+        {
+            currentGranadeCant += 1;
         }
     }
 

@@ -15,6 +15,7 @@ TagManager:
   - Caida
   - Bala
   - Enemy
+  - Granade
   layers:
   - Default
   - TransparentFX
