@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GoToLevel3 : MonoBehaviour
+public class GoToLevel5 : MonoBehaviour
 {
+   
     private void OnCollisionEnter(Collision collision)
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("MainMenu");
     }
 }
