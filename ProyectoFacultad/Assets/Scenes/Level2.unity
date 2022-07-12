@@ -6883,7 +6883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4205384dc4b3f9942a8503ab5799f9c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  granadeE: {fileID: 0}
+  granadeE: {fileID: 81638122}
   granadeText: {fileID: 315713296}
 --- !u!114 &315713296
 MonoBehaviour:
