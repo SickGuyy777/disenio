@@ -32,7 +32,7 @@ public class HealthSystem : MonoBehaviour
     {
         currentHealth -= amount;
         healthBar.SetHealth(currentHealth);
-        GameObject.Instantiate(sonidodopj);
+        Instantiate(sonidodopj);
     }
 
     public void Takehealth()

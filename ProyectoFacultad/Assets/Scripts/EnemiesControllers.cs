@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemiesControllers : MonoBehaviour
 {
+    public bool ExplosiveEnemy = false;
     public float health, range;
     public float maxHealth = 4;
     public AudioSource sonidodisparo;
@@ -27,13 +28,19 @@ public class EnemiesControllers : MonoBehaviour
 
     [Space]
     public GameObject ammoBox;
-    public Transform transform;
 
     [Space]
     public Animator anim;
 
     [Space]
     public GameObject deathEffect;
+
+    public GameObject explosionEffect;
+
+    public AudioSource explosionsfw;
+    
+    public float explosionForce=10f;
+    public float radius=10f;
 
     private void Start()
     {
@@ -89,11 +96,17 @@ public class EnemiesControllers : MonoBehaviour
         health -= damageAmount;
         GameObject.Instantiate(sonidodo);
 
-        if (health <= 0)
+        if (health <= 0 & ExplosiveEnemy == false)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
             DropAmmo();
+        }
+
+        if (health <= 0 & ExplosiveEnemy == true)
+        {
+            Explode();
+
         }
     }
 
@@ -107,5 +120,47 @@ public class EnemiesControllers : MonoBehaviour
         Vector3 position = transform.position;
         GameObject boxAmmo = Instantiate(ammoBox, position + new Vector3(0.1f,1f,0f), Quaternion.identity);
         Destroy(boxAmmo, 5f);
+    }
+
+    private void Explode()
+    {
+        
+        Collider[]colliders=Physics.OverlapSphere(transform.position,radius);
+        
+        foreach(Collider near in colliders)
+        {
+
+        
+            Rigidbody rig=near.GetComponent<Rigidbody>();
+        
+            if(rig!=null)
+            rig.AddExplosionForce(explosionForce,transform.position,radius,1f,ForceMode.Impulse);
+        
+            // if (near.gameObject.TryGetComponent<EnemiesControllers>(out EnemiesControllers enemyComponent))
+            // {
+            //     enemyComponent.TakeDamage(2);
+            // }
+            if (near.gameObject.TryGetComponent<HealthSystem>(out HealthSystem playerComponent))
+            {
+                playerComponent.TakeDamage(2);
+            }
+        }
+        
+
+
+        
+        Instantiate(explosionEffect,transform.position,transform.rotation);
+        Instantiate(explosionsfw);
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision other) 
+    {
+        
+        var pl = other.gameObject.GetComponent<HealthSystem>();
+        if (pl != null & ExplosiveEnemy)
+        {
+           Explode();
+        }
     }
 }

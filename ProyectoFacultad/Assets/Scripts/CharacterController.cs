@@ -33,8 +33,7 @@ public class CharacterController : MonoBehaviour
 
     [Space]
     public GameObject granadePrefab;
-    public float granadeForce;
-    public Transform distancePoint;
+    
 
     void Start()
     {
@@ -124,10 +123,11 @@ public class CharacterController : MonoBehaviour
 
     void TrowGranade()
     {
-        GameObject newGranade = Instantiate(granadePrefab, transform.position + transform.forward, Quaternion.identity);
+        
+        GameObject newGranade = Instantiate(granadePrefab, LaunchOffset.position, LaunchOffset.rotation);
 
-        Vector2 dir = (distancePoint.position - transform.position).normalized;
-        newGranade.GetComponent<Rigidbody>().AddForce(granadeForce * dir, ForceMode.Impulse);
+        
+        newGranade.GetComponent<Rigidbody>().AddForce(-LaunchOffset.right * 5, ForceMode.Impulse);
     }
 
     

@@ -13,7 +13,7 @@ public class EnemyAttack : MonoBehaviour
         if (hitHealth != null)
         {
             hitHealth.TakeDamage(damage);
-            GameObject.Instantiate(sonidodo);
+        
         }
     }
 }
